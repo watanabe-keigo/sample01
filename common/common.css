@@ -29,6 +29,7 @@ a:hover {
 }
 
 img {
+    display: block;
     width: 100%;
     height: auto;
     vertical-align: bottom;
@@ -48,4 +49,9 @@ img {
     line-height: 100px;
     text-align: center;
     margin: 4rem auto 0;
+}
+
+/* あとで削除する */
+#wpadminbar {
+    display: none;
 }

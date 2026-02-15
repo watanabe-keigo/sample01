@@ -17,9 +17,28 @@ header {
 	height: 160px;
 }
 
+@media (max-width: 768px) {
+	.header_inner {
+		justify-content: flex-start;
+		height: auto;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
 .header_inner .header_logo a {
 	display: block;
 	width: 192px;
+}
+
+@media (max-width: 768px) {
+	.header_inner .header_logo {
+		margin-right: 0.75rem;
+	}
+
+	.header_inner .header_logo a {
+		width: 120px;
+	}
 }
 
 .header_inner .header_information .information_content {
@@ -44,18 +63,114 @@ header {
 	font-weight: 700;
 }
 
+@media (max-width: 768px) {
+	.header_inner .header_information {
+		position: absolute;
+		top: calc(100% + 2rem);
+		left: 100%;
+		z-index: 1000;
+		width: 100%;
+		transition: 0.3s;
+	}
+
+	header.sp_on .header_inner .header_information {
+		left: 1rem;
+	}
+
+	.header_inner .header_information .phone_number_content p {
+		font-size: 2rem;
+	}
+}
+
+
+.sp_menu_bar {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.sp_menu_bar {
+		display: block;
+		width: 32px;
+		height: 15px;
+		position: relative;
+		z-index: 0;
+		margin-left: auto;
+	}
+
+	.sp_menu_bar::before,
+	.sp_menu_bar::after {
+		content: "";
+		display: block;
+		width: 32px;
+		height: 5px;
+		background-color: #ffffff;
+		position: absolute;
+		left: 0;
+		border-radius: 5px;
+		transition: 0.3s;
+	}
+
+	.sp_menu_bar::before {
+		top: 0;
+	}
+
+	.sp_menu_bar::after {
+		bottom: 0;
+	}
+
+	header.sp_on .sp_menu_bar::before {
+		transform: rotate(45deg);
+	}
+
+	header.sp_on .sp_menu_bar::after {
+		transform: rotate(-45deg);
+		top: 0;
+	}
+}
+
 .header_menu {
 	background-color: #ffffff;
+}
+
+@media (max-width: 768px) {
+	.header_menu {
+		background-color: #4E2613;
+		position: fixed;
+		left: 100%;
+		z-index: 999;
+		width: 100%;
+		height: calc(100% - 60px);
+		padding: calc(2rem + 120px) 0 2rem;
+		transition: 0.3s;
+	}
+
+	header.sp_on .header_menu {
+		left: 0;
+	}
 }
 
 .header_menu .menu_list {
 	display: flex;
 }
 
+@media (max-width: 768px) {
+	.header_menu .menu_list {
+		flex-direction: column;
+	}
+}
+
 .header_menu .menu_list li {
 	flex: 1;
 	border-left: 1.5px solid #807D7C;
 	border-right: 1.5px solid #807D7C;
+}
+
+@media (max-width: 768px) {
+	.header_menu .menu_list li {
+		border-left: none;
+		border-right: none;
+		border-bottom: 1px solid #ffffff;
+	}
 }
 
 .header_menu .menu_list li:first-child {
@@ -72,4 +187,11 @@ header {
 	text-align: center;
 	line-height: 56px;
 	font-weight: 700;
+}
+
+@media (max-width: 768px) {
+	.header_menu .menu_list li a {
+		color: #ffffff;
+		text-align: left;
+	}
 }

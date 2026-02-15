@@ -42,12 +42,13 @@
 						</div>
 					</div>
 				</div>
+				<button id="sp_menu_bar" class="sp_menu_bar"></button>
 			</div>
 		</div>
 		<div class="header_menu">
 			<ul class="menu_list content_width">
 				<li>
-					<a href="#">トップ</a>
+					<a href="<?php echo home_url(); ?>">トップ</a>
 				</li>
 				<li>
 					<a href="#">お知らせ</a>
@@ -228,5 +229,7 @@
 	</footer>
 
 	<?php wp_footer(); ?>
+	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/common/common.js"></script>
 </body>
 </html>
