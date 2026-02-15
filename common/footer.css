@@ -1,0 +1,35 @@
+footer {
+	background-color: #4E2613;
+}
+
+.footer_container {
+	max-width: 326px;
+	margin: 0 auto;
+	padding: 4rem 0 1.5rem;
+}
+
+.footer_container .footer_image {
+	width: 192px;
+	margin: 0 auto 2rem;
+}
+
+.footer_container .address,
+.footer_container .business_hours {
+	margin-bottom: 2rem;
+}
+
+.footer_container .address p,
+.footer_container .business_hours p,
+.footer_container .copyright {
+	color: #ffffff;
+	text-align: center;
+}
+
+.footer_container .business_hours p:not(:first-of-type) {
+	text-align: left;
+}
+
+.footer_container .address p:not(:last-of-type),
+.footer_container .business_hours p:not(:last-of-type) {
+	margin-bottom: 0.25rem;
+}

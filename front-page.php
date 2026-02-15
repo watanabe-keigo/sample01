@@ -10,35 +10,42 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/reset.css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/common.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/header.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/footer.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/top/style.css">
 	<?php wp_head(); ?>
 </head>
 <body>
 	<!-- ヘッダー -->
 	<header>
 		<div class="header_container">
-			<h1 class="header_logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/logo.png" alt="Cafe CSM">
-			</h1>
-			<div class="header_information">
-				<div class="information_content phone_number_content">
-					<div class="icon">
-						<img src="<?php echo get_template_directory_uri(); ?>/common/images/phone.svg" alt="電話番号">
+			<div class="header_inner content_width">
+				<h1 class="header_logo">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/common/images/logo.png" alt="Cafe CSM">
+					</a>
+				</h1>
+				<div class="header_information">
+					<div class="information_content phone_number_content">
+						<div class="icon">
+							<img src="<?php echo get_template_directory_uri(); ?>/common/images/phone.svg" alt="電話番号">
+						</div>
+						<p>000-0000-0000</p>
 					</div>
-					<p>000-0000-0000</p>
-				</div>
-				<div class="information_content business_hours_content">
-					<div class="icon">
-						<img src="<?php echo get_template_directory_uri(); ?>/common/images/clock.svg" alt="営業時間">
-					</div>
-					<div class="business_hours">
-						<p>土日祝 7:00～20:00(ラストオーダー19:30)</p>
-						<p>平 日 8:00～20:00(ラストオーダー19:30)</p>
+					<div class="information_content business_hours_content">
+						<div class="icon">
+							<img src="<?php echo get_template_directory_uri(); ?>/common/images/clock.svg" alt="営業時間">
+						</div>
+						<div class="business_hours">
+							<p>土日祝 7:00～20:00(ラストオーダー19:30)</p>
+							<p>平日 8:00～20:00(ラストオーダー19:30)</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="header_menu">
-			<ul class="menu_list">
+			<ul class="menu_list content_width">
 				<li>
 					<a href="#">トップ</a>
 				</li>
@@ -68,7 +75,7 @@
 		<!-- コンセプト -->
 		<section class="concept">
 			<h2 class="top_heading">CSMについて</h2>
-			<div class="concept_content">
+			<div class="concept_content content_width">
 				<div class="concept_image">
 					<img src="<?php echo get_template_directory_uri(); ?>/common/images/concept.png" alt="コンセプト">
 				</div>
@@ -83,7 +90,7 @@
 		<!-- お知らせ -->
 		<section class="information">
 			<h2 class="top_heading">お知らせ</h2>
-			<ul class="information_list">
+			<ul class="information_list content_width">
 				<li>
 					<a href="#">
 						<div class="information_image">
@@ -102,7 +109,7 @@
 				<li>
 					<a href="#">
 						<div class="information_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_images.png" alt="お知らせ">
+							<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
 						</div>
 						<div class="information_item">
 							<div class="label">
@@ -136,7 +143,7 @@
 		<!-- メニュー -->
 		<section class="menu">
 			<h2 class="top_heading">メニュー</h2>
-			<div class="menu_content">
+			<div class="menu_content content_width">
 				<div class="item">
 					<h3>コーヒー</h3>
 					<a href="#">
@@ -176,7 +183,7 @@
 		<!-- 店舗案内 -->
 		<section class="shop">
 			<h2 class="top_heading">店舗案内</h2>
-			<div class="shop_content">
+			<div class="shop_content content_width">
 				<div class="shop_image">
 					<img src="<?php echo get_template_directory_uri(); ?>/common/images/shop.png" alt="店舗案内">
 				</div>

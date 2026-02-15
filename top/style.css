@@ -1,0 +1,132 @@
+/* 共通 */
+.top_heading {
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	padding: 4rem 0;
+}
+
+.container section {
+	margin-bottom: 4rem;
+}
+
+/* ファーストビュー */
+.firstview {
+	display: flex;
+	max-height: 810px;
+	position: relative;
+	margin-top: 13.5rem;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.firstview img {
+	object-fit: cover;
+}
+
+.firstview .catch_copy {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 2.625rem;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+/* コンセプト */
+.concept .concept_content {
+	display: flex;
+	gap: 2rem;
+}
+
+.concept .concept_content .concept_image,
+.concept .concept_content .concept_description {
+	width: 50%;
+}
+
+.concept .concept_content .concept_description p {
+	font-size: 1.625rem;
+	font-weight: 700;
+}
+
+/* お知らせ */
+.information .information_list li:not(:last-of-type) {
+	margin-bottom: 2rem;
+}
+
+.information .information_list li a {
+	display: flex;
+	gap: 2rem;
+}
+
+.information .information_list li a .information_image,
+.information .information_list li a .information_item {
+	width: 50%;
+}
+
+.information .information_list li a .information_item .label {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-bottom: 1.857rem;
+}
+
+.information .information_list li a .information_item .label .category {
+	color: #ffffff;
+	background-color: #4E4D13;
+	padding: 0 0.875rem;
+	line-height: 34px;
+}
+
+.information .information_list li a .information_item .title {
+	font-size: 1.625rem;
+	font-weight: 700;
+	margin-bottom: 1.875rem;
+}
+
+.information .information_list li a .information_item p {
+	color: #807D7C;
+}
+
+/* メニュー */
+.menu .menu_content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+.menu .menu_content .item {
+	width: calc(50% - 1rem);
+}
+
+.menu .menu_content .item h3 {
+	font-size: 1.625rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+/* 店舗案内 */
+.shop .shop_content {
+	display: flex;
+	gap: 2rem;
+}
+
+.shop .shop_content .shop_image,
+.shop .shop_content .shop_inner {
+	width: 50%;
+}
+
+.shop .shop_content .shop_inner .item:not(:last-of-type) {
+	margin-bottom: 1.75rem;
+}
+
+.shop .shop_content .shop_inner .item .label {
+	font-weight: 700;
+}
+
+.shop .shop_content .shop_inner .item p {
+	margin-top: 0.25rem;
+}
