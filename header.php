@@ -7,7 +7,7 @@
 	<title>サンプル01</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/reset.css?<?php echo time(); ?>">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/common.css?<?php echo time(); ?>">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/header.css?<?php echo time(); ?>">
