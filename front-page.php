@@ -1,70 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="robots" content="noindex, nofollow">
-	<title>サンプル01</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/reset.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/common.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/header.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/footer.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/top/style.css">
-	<?php wp_head(); ?>
-</head>
-<body>
-	<!-- ヘッダー -->
-	<header>
-		<div class="header_container">
-			<div class="header_inner content_width">
-				<h1 class="header_logo">
-					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/common/images/logo.png" alt="Cafe CSM">
-					</a>
-				</h1>
-				<div class="header_information">
-					<div class="information_content phone_number_content">
-						<div class="icon">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/phone.svg" alt="電話番号">
-						</div>
-						<p>000-0000-0000</p>
-					</div>
-					<div class="information_content business_hours_content">
-						<div class="icon">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/clock.svg" alt="営業時間">
-						</div>
-						<div class="business_hours">
-							<p>土日祝 7:00～20:00(ラストオーダー19:30)</p>
-							<p>平日 8:00～20:00(ラストオーダー19:30)</p>
-						</div>
-					</div>
-				</div>
-				<button id="sp_menu_bar" class="sp_menu_bar"></button>
-			</div>
-		</div>
-		<div class="header_menu">
-			<ul class="menu_list content_width">
-				<li>
-					<a href="<?php echo home_url(); ?>">トップ</a>
-				</li>
-				<li>
-					<a href="#">お知らせ</a>
-				</li>
-				<li>
-					<a href="#">コンセプト</a>
-				</li>
-				<li>
-					<a href="#">メニュー</a>
-				</li>
-				<li>
-					<a href="#">店舗案内</a>
-				</li>
-			</ul>
-		</div>
-	</header>
+<?php get_header(); ?>
+<!-- css -->
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/top/style.css">
 
 	<!-- ファーストビュー -->
 	<section class="firstview">
@@ -208,28 +144,4 @@
 		</section>
 	</div>
 
-	<!-- フッター -->
-	<footer>
-		<div class="footer_container">
-			<div class="footer_image">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/logo.png" alt="Cafe CSM">
-			</div>
-			<div class="address">
-				<p>住所</p>
-				<p>〒000-0000 ~~市~区~~1丁目1-12</p>
-				<p>TEL：000-000-0000</p>
-			</div>
-			<div class="business_hours">
-				<p>営業時間</p>
-				<p>土日祝 7:00～20:00（ラストオーダー19:30）</p>
-				<p>平日 8:00～20:00（ラストオーダー19:30）</p>
-			</div>
-			<p class="copyright">©︎2022 Cafe CSM</p>
-		</div>
-	</footer>
-
-	<?php wp_footer(); ?>
-	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/common/common.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>
