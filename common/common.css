@@ -51,6 +51,14 @@ img {
     margin: 4rem auto 0;
 }
 
+@media (max-width: 768px) {
+    .btn {
+        width: 240px;
+        line-height: 60px;
+        margin: 2rem auto 0;
+    }
+}
+
 /* あとで削除する */
 #wpadminbar {
     display: none;

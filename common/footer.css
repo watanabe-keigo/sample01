@@ -8,9 +8,22 @@ footer {
 	padding: 4rem 0 1.5rem;
 }
 
+@media (max-width: 425px) {
+	.footer_container {
+		max-width: 280px;
+		padding: 2rem 0 1rem;
+	}
+}
+
 .footer_container .footer_image {
 	width: 192px;
 	margin: 0 auto 2rem;
+}
+
+@media (max-width: 425px) {
+	.footer_container .footer_image {
+		width: 180px;
+	}
 }
 
 .footer_container .address,
@@ -23,6 +36,17 @@ footer {
 .footer_container .copyright {
 	color: #ffffff;
 	text-align: center;
+}
+
+@media (max-width: 425px) {
+	.footer_container .address p,
+	.footer_container .business_hours p {
+		font-size: 0.875rem;
+	}
+
+	.footer_container .copyright {
+		font-size: 0.75rem;
+	}
 }
 
 .footer_container .business_hours p:not(:first-of-type) {
