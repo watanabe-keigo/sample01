@@ -1,12 +1,9 @@
 <?php get_header(); ?>
 <!-- css -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/top/style.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/top/css/style.css?<?php echo time(); ?>">
 
 	<!-- ファーストビュー -->
-	<section class="firstview">
-		<img src="<?php echo get_template_directory_uri(); ?>/common/images/firstview.png" alt="ファーストビュー">
-		<div class="catch_copy">一杯のコーヒーで世界を旅しよう。</div>
-	</section>
+	<?php include get_template_directory() . '/contents/firstview/firstview.php'; ?>
 
 	<div class="container">
 		<!-- コンセプト -->
@@ -27,53 +24,7 @@
 		<!-- お知らせ -->
 		<section class="information">
 			<h2 class="top_heading">お知らせ</h2>
-			<ul class="information_list content_width">
-				<li>
-					<a href="#">
-						<div class="information_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/information_01.png" alt="お知らせ">
-						</div>
-						<div class="information_item">
-							<div class="label">
-								<span class="date">2022.12.12</span>
-								<span class="category">お知らせ</span>
-							</div>
-							<div class="title">タイトル</div>
-							<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="information_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
-						</div>
-						<div class="information_item">
-							<div class="label">
-								<span class="date">2022.12.12</span>
-								<span class="category">お知らせ</span>
-							</div>
-							<div class="title">タイトル</div>
-							<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="information_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/information_02.png" alt="お知らせ">
-						</div>
-						<div class="information_item">
-							<div class="label">
-								<span class="date">2022.12.12</span>
-								<span class="category">お知らせ</span>
-							</div>
-							<div class="title">タイトル</div>
-							<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-						</div>
-					</a>
-				</li>
-			</ul>
+			<?php include get_template_directory() . '/contents/information-list/information-list.php'; ?>
 			<a href="#" class="btn">バックナンバー</a>
 		</section>
 	

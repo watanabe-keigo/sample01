@@ -58,8 +58,3 @@ img {
         margin: 2rem auto 0;
     }
 }
-
-/* あとで削除する */
-#wpadminbar {
-    display: none;
-}

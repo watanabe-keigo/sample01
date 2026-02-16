@@ -8,10 +8,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/reset.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/common.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/header.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/footer.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/reset.css?<?php echo time(); ?>">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/common.css?<?php echo time(); ?>">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/header.css?<?php echo time(); ?>">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/footer.css?<?php echo time(); ?>">
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -50,16 +50,16 @@
 					<a href="<?php echo home_url(); ?>">トップ</a>
 				</li>
 				<li>
-					<a href="#">お知らせ</a>
+					<a href="<?php echo home_url(); ?>/information">お知らせ</a>
 				</li>
 				<li>
-					<a href="#">コンセプト</a>
+					<a href="<?php echo home_url(); ?>/concept">コンセプト</a>
 				</li>
 				<li>
-					<a href="#">メニュー</a>
+					<a href="<?php echo home_url(); ?>/menu">メニュー</a>
 				</li>
 				<li>
-					<a href="#">店舗案内</a>
+					<a href="<?php echo home_url(); ?>/shop">店舗案内</a>
 				</li>
 			</ul>
 		</div>

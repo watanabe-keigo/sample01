@@ -1,0 +1,46 @@
+/* ファーストビュー */
+.firstview {
+	display: flex;
+	max-height: 500px;
+	position: relative;
+	margin-top: 13.5rem;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.firstview.top {
+    max-height: 810px;
+}
+
+@media (max-width: 768px) {
+	.firstview {
+		margin-top: 0;
+	}
+}
+
+.firstview img {
+	object-fit: cover;
+}
+
+.firstview .catch_copy {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 2.625rem;
+	font-weight: 700;
+	color: #ffffff;
+	white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+	.firstview .catch_copy {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 425px) {
+	.firstview .catch_copy {
+		font-size: 1.25rem;
+	}
+}

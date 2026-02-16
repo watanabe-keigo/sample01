@@ -1,0 +1,107 @@
+/* お知らせ */
+.information_list li:not(:last-of-type) {
+	margin-bottom: 2rem;
+}
+
+.information_list li a {
+	display: flex;
+	gap: 2rem;
+}
+
+@media (max-width: 768px) {
+	.information_list li a {
+		gap: 1rem;
+	}
+}
+
+.information_list li a .information_image,
+.information_list li a .information_item {
+	width: 50%;
+}
+
+@media (max-width: 768px) {
+	.information_list li a .information_image {
+		width: 40%;
+	}
+
+	.information_list li a .information_item {
+		width: 60%;
+	}
+}
+
+.information_list li a .information_item .label {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	margin-bottom: 1.857rem;
+}
+
+@media (max-width: 768px) {
+	.information_list li a .information_item .label {
+		gap: 1rem;
+	}
+}
+
+.information_list li a .information_item .label .category {
+	color: #ffffff;
+	background-color: #4E4D13;
+	padding: 0 0.875rem;
+	line-height: 2.125;
+}
+
+@media (max-width: 768px) {
+	.information_list li a .information_item .label .date,
+	.information_list li a .information_item .label .category {
+		font-size: 0.75rem;
+	}
+
+	.information_list li a .information_item .label .category {
+		padding: 0 0.75rem;
+	}
+}
+
+@media (max-width: 425px) {
+	.information_list li a .information_item .label .category {
+		line-height: 1.5rem;
+		padding: 0 0.5rem;
+	}
+}
+
+.information_list li a .information_item .title {
+	font-size: 1.625rem;
+	font-weight: 700;
+	margin-bottom: 1.875rem;
+}
+
+@media (max-width: 768px) {
+	.information_list li a .information_item .label,
+	.information_list li a .information_item .title {
+		margin-bottom: 0.5rem;
+	}
+
+	.information_list li a .information_item .title {
+		font-size: 1rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.information_list li a .information_item p {
+	color: #807D7C;
+}
+
+@media (max-width: 768px) {
+	.information_list li a .information_item p {
+		font-size: 0.875rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@media (max-width: 425px) {
+	.information_list li a .information_item p {
+		display: none;
+	}
+}
