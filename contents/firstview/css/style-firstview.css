@@ -1,9 +1,10 @@
 /* ファーストビュー */
 .firstview {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	max-height: 500px;
 	position: relative;
-	margin-top: 13.5rem;
 	overflow: hidden;
 	z-index: 0;
 }
@@ -12,14 +13,8 @@
     max-height: 810px;
 }
 
-@media (max-width: 768px) {
-	.firstview {
-		margin-top: 0;
-	}
-}
-
 .firstview img {
-	object-fit: cover;
+	height: 100%;
 }
 
 .firstview .catch_copy {

@@ -12,11 +12,18 @@ html {
     line-height: 1.5;
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
+    padding-top: 13.5rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 3.75rem;
+    }
 }
 
 a {
@@ -36,7 +43,7 @@ img {
 }
 
 .content_width {
-    max-width: 1132px;
+    max-width: 1152px;
     padding: 0 1rem;
     margin: 0 auto;
 }

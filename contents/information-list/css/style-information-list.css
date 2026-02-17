@@ -19,6 +19,16 @@
 	width: 50%;
 }
 
+.information_list li a .information_image {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.information_list li a .information_image img {
+	height: 100%;
+	object-fit: cover;
+}
+
 @media (max-width: 768px) {
 	.information_list li a .information_image {
 		width: 40%;
