@@ -3,29 +3,19 @@
 	font-size: 2rem;
 	font-weight: 700;
 	text-align: center;
-	padding: 4rem 0;
+	padding-top: 4rem;
 }
 
 @media (max-width: 768px) {
 	.top_heading {
 		font-size: 1.75rem;
-		padding: 2rem 0;
+		padding-top: 2rem;
 	}
 }
 
 @media (max-width: 425px) {
 	.top_heading {
 		font-size: 1.5rem;
-	}
-}
-
-.container section {
-	margin-bottom: 4rem;
-}
-
-@media (max-width: 768px) {
-	.container section {
-		margin-bottom: 2rem;
 	}
 }
 

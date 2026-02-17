@@ -41,6 +41,16 @@ img {
     margin: 0 auto;
 }
 
+.container .content_width {
+    padding: 4rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .container .content_width {
+        padding: 2rem 1rem;
+    }
+}
+
 .btn {
     color: #ffffff;
     background-color: #4E2613;
@@ -48,13 +58,13 @@ img {
     width: 360px;
     line-height: 100px;
     text-align: center;
-    margin: 4rem auto 0;
+    margin: 0 auto 4rem;
 }
 
 @media (max-width: 768px) {
     .btn {
         width: 240px;
         line-height: 60px;
-        margin: 2rem auto 0;
+        margin: 0 auto 2rem;
     }
 }
