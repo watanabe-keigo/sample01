@@ -1,14 +1,15 @@
-.breadcrumbs_list {
+.breadcrumbs {
 	display: flex;
-	padding: 1rem 0;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
-.breadcrumbs_list li:not(:last-of-type) {
+.breadcrumbs span[property="itemListElement"]:not(:last-of-type) {
 	margin-right: 1.75rem;
 	position: relative;
 }
 
-.breadcrumbs_list li:not(:last-of-type)::after {
+.breadcrumbs span[property="itemListElement"]:not(:last-of-type)::after {
 	content: "";
 	display: block;
 	background-image: url("../../../common/images/vector.svg");
@@ -22,8 +23,7 @@
 	transform: translateY(-50%);
 }
 
-.breadcrumbs_list li a,
-.breadcrumbs_list li span {
+.breadcrumbs span[property="itemListElement"] span[property="name"] {
 	display: block;
 	color: #807D7C;
 	font-size: 0.75rem;
