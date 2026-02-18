@@ -25,7 +25,7 @@
 		<section class="information">
 			<h2 class="top_heading">お知らせ</h2>
 			<?php include get_template_directory() . '/contents/information-list/information-list.php'; ?>
-			<a href="#" class="btn">バックナンバー</a>
+			<a href="<?php echo esc_url(get_post_type_archive_link('information')); ?>" class="btn">バックナンバー</a>
 		</section>
 	
 		<!-- メニュー -->

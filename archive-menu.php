@@ -8,67 +8,32 @@
 <div class="container">
 	<?php include get_template_directory() . '/contents/breadcrumbs/breadcrumbs.php'; ?>
 
+	<?php 
+		$args = [
+			'post_type'      => 'menu',
+			'posts_per_page' => 12,
+			'post_status'    => 'publish',
+			'orderby'        => 'date',
+			'order'          => 'DESC',
+		];
+
+		$query = new WP_Query($args);
+	?>
+	
 	<div class="menu content_width">
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
-		<div class="menu_item">
-			<a href="#">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="">
-			</a>
-		</div>
+		<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+			<div class="menu_item">
+				<a href="<?php the_permalink(); ?>">
+					<?php if (has_post_thumbnail()) : ?>
+						<?php the_post_thumbnail('medium'); ?>
+					<?php else : ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="メニュー">
+					<?php endif; ?>
+				</a>
+			</div>
+		<?php endwhile; else : ?>
+			メニューがありません。
+		<?php endif; ?>
 	</div>
 </div>
 

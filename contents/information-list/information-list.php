@@ -1,9 +1,20 @@
 <!-- css -->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/contents/information-list/css/style-information-list.css?<?php echo time(); ?>">
 
-<?php if (have_posts()) : ?>
+<?php 
+$args = [
+  'post_type'      => 'information',
+  'posts_per_page' => 3,
+  'post_status'    => 'publish',
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+];
+
+$query = new WP_Query($args);
+?>
+<?php if ($query->have_posts()) : ?>
 	<ul class="information_list content_width">
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ($query->have_posts()) : $query->the_post(); ?>
 			<li>
 				<a href="<?php the_permalink(); ?>">
 					<div class="information_image">
