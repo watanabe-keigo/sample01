@@ -1,0 +1,4 @@
+.article_element h1,
+.article_element .label {
+	display: none !important;
+}

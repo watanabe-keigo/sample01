@@ -16,13 +16,11 @@
 					}
 				?>
 			</div>
-			<div class="article_thumbnail">
-				<?php if (has_post_thumbnail()) : ?>
+			<?php if (has_post_thumbnail()) : ?>
+				<div class="article_thumbnail">
 					<?php the_post_thumbnail('large'); ?>
-				<?php else : ?>
-					<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 			<?php the_content(); ?>
 		<?php endwhile; endif; ?>
 	</div>
