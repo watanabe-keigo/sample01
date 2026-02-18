@@ -1,50 +1,37 @@
 <!-- css -->
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/contents/information-list/css/style-information-list.css?<?php echo time(); ?>">
 
-<ul class="information_list content_width">
-	<li>
-		<a href="#">
-			<div class="information_image">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/information_01.png" alt="お知らせ">
-			</div>
-			<div class="information_item">
-				<div class="label">
-					<span class="date">2022.12.12</span>
-					<span class="category">お知らせ</span>
-				</div>
-				<div class="title">タイトル</div>
-				<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-			</div>
-		</a>
-	</li>
-	<li>
-		<a href="#">
-			<div class="information_image">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
-			</div>
-			<div class="information_item">
-				<div class="label">
-					<span class="date">2022.12.12</span>
-					<span class="category">お知らせ</span>
-				</div>
-				<div class="title">タイトル</div>
-				<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-			</div>
-		</a>
-	</li>
-	<li>
-		<a href="#">
-			<div class="information_image">
-				<img src="<?php echo get_template_directory_uri(); ?>/common/images/information_02.png" alt="お知らせ">
-			</div>
-			<div class="information_item">
-				<div class="label">
-					<span class="date">2022.12.12</span>
-					<span class="category">お知らせ</span>
-				</div>
-				<div class="title">タイトル</div>
-				<p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-			</div>
-		</a>
-	</li>
-</ul>
+<?php if (have_posts()) : ?>
+	<ul class="information_list content_width">
+		<?php while ( have_posts() ) : the_post(); ?>
+			<li>
+				<a href="<?php the_permalink(); ?>">
+					<div class="information_image">
+						<?php if (has_post_thumbnail()) : ?>
+							<?php the_post_thumbnail('medium'); ?>
+						<?php else : ?>
+							<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
+						<?php endif; ?>
+					</div>
+					<div class="information_item">
+						<div class="label">
+							<span class="date"><?php echo get_the_date('Y.m.d'); ?></span>
+							<?php
+								$terms = get_the_terms(get_the_ID(), 'information_category');
+								if ($terms && ! is_wp_error($terms)) {
+									foreach ( $terms as $term ) {
+										echo '<span class="category '. $term->slug .'">' . esc_html($term->name) . '</span>';
+									}
+								}
+							?>
+						</div>
+						<div class="title"><?php the_title(); ?></div>
+						<p><?php the_excerpt(); ?></p>
+					</div>
+				</a>
+			</li>
+		<?php endwhile; ?>
+	</ul>
+<?php else : ?>
+	<div class="content_width">お知らせがありません。</div>
+<?php endif; ?>

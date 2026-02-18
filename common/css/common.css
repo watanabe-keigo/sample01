@@ -75,3 +75,11 @@ img {
         margin: 0 auto 2rem;
     }
 }
+
+.label .category.news {
+    background-color: #4E4D13;
+}
+
+.label .category.coupon {
+    background-color: #4E1328;
+}
