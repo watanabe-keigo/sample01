@@ -71,26 +71,8 @@
 		<!-- 店舗案内 -->
 		<section class="shop">
 			<h2 class="top_heading">店舗案内</h2>
-			<div class="shop_content content_width">
-				<div class="shop_image">
-					<img src="<?php echo get_template_directory_uri(); ?>/common/images/shop.png" alt="店舗案内">
-				</div>
-				<div class="shop_inner">
-					<div class="item">
-						<div class="label">住所</div>
-						<p>〒000-0000 ~~市~区~~1丁目1-12</p>
-						<p>TEL：000-000-0000</p>
-					</div>
-					<div class="item">
-						<div class="label">営業時間</div>
-						<p>土日祝 7:00～20:00（ラストオーダー19:30）</p>
-						<p>平日 8:00～20:00（ラストオーダー19:30）</p>
-					</div>
-					<div class="item">
-						<div class="label">店舗設備</div>
-						<p>コンセント（一部席）、Free Wi-fi、全席完全禁煙、駐車場(10台)</p>
-					</div>
-				</div>
+			<div class="content_width">
+				<?php include get_template_directory() . '/contents/shop-content/shop-content.php'; ?>
 			</div>
 		</section>
 	</div>
