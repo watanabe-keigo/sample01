@@ -35,7 +35,7 @@
 	height: 600px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
 	.shop .access_map iframe {
 		height: 500px;
 	}
