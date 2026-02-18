@@ -65,7 +65,7 @@
 					</a>
 				</div>
 			</div>
-			<a href="#" class="btn">メニューの一覧</a>
+			<a href="<?php echo esc_url(get_post_type_archive_link('menu')); ?>" class="btn">メニューの一覧</a>
 		</section>
 	
 		<!-- 店舗案内 -->

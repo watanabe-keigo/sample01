@@ -8,7 +8,14 @@
 			<div class="label">
 				<span class="date"><?php echo get_the_date('Y.m.d'); ?></span>
 				<?php
-					$terms = get_the_terms(get_the_ID(), 'information_category');
+					$post_type = get_post_type();
+					if ($post_type === "information") {
+						$post_type = "information_category";
+					} else if ($post_type === "menu") {
+						$post_type = "menu_category";
+					}
+					
+					$terms = get_the_terms(get_the_ID(), $post_type);
 					if ($terms && ! is_wp_error($terms)) {
 						foreach ( $terms as $term ) {
 							echo '<span class="category '. $term->slug .'">' . esc_html($term->name) . '</span>';

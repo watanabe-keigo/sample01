@@ -83,3 +83,10 @@ img {
 .label .category.coupon {
     background-color: #4E1328;
 }
+
+.label .category.coffee,
+.label .category.meal,
+.label .category.drink,
+.label .category.sweet {
+    background-color: #4E3913;
+}
