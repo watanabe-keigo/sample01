@@ -3,19 +3,28 @@
 
 <div class="article content_width">
 	<div class="article_element">
-		<h1>マラゴッジ豆を入荷しました</h1>
-		<div class="label">
-			<span class="date">2021.10.21</span>
-			<span class="category">お知らせ</span>
-		</div>
-		<div class="article_thumbnail">
-			<img src="<?php echo get_template_directory_uri(); ?>/common/images/information_01.png" alt="">
-		</div>
-		<p>記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。</p>
-		<h2>記事の見出しが入ります</h2>
-		<p>記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。</p>
-		<h3>記事の見出しが入ります</h3>
-		<p>記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。記事の本文が入ります。</p>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<h1><?php the_title(); ?></h1>
+			<div class="label">
+				<span class="date"><?php echo get_the_date('Y.m.d'); ?></span>
+				<?php
+					$terms = get_the_terms(get_the_ID(), 'information_category');
+					if ($terms && ! is_wp_error($terms)) {
+						foreach ( $terms as $term ) {
+							echo '<span class="category '. $term->slug .'">' . esc_html($term->name) . '</span>';
+						}
+					}
+				?>
+			</div>
+			<div class="article_thumbnail">
+				<?php if (has_post_thumbnail()) : ?>
+					<?php the_post_thumbnail('large'); ?>
+				<?php else : ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/common/images/no_image.png" alt="お知らせ">
+				<?php endif; ?>
+			</div>
+			<?php the_content(); ?>
+		<?php endwhile; endif; ?>
 	</div>
 	<div class="sidebar">
 		<div class="archives">
