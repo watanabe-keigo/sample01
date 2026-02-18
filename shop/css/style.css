@@ -6,13 +6,13 @@
 }
 
 @media (max-width: 768px) {
-	.article_element h2 {
+	.shop h2 {
 		font-size: 1.5rem;
 	}
 }
 
 @media (max-width: 425px) {
-	.article_element h2 {
+	.shop h2 {
 		font-size: 1.25rem;
 	}
 }
