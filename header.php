@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/common/css/footer.css?<?php echo time(); ?>">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body class="locked">
 	<!-- ヘッダー -->
 	<header>
 		<div class="header_container">

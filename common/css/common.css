@@ -20,6 +20,10 @@ body {
     padding-top: 13.5rem;
 }
 
+body.locked {
+    display: none;
+}
+
 @media (max-width: 768px) {
     body {
         padding-top: 3.75rem;

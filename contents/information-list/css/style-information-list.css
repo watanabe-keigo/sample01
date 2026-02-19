@@ -32,6 +32,7 @@
 @media (max-width: 768px) {
 	.information_list li a .information_image {
 		width: 40%;
+		min-width: 40%;
 	}
 
 	.information_list li a .information_item {
