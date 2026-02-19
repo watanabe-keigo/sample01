@@ -16,6 +16,7 @@
 		</div>
 		<p class="copyright">©︎2022 Cafe CSM</p>
 	</div>
+	<button class="page_top_btn"></button>
 </footer>
 
 <?php wp_footer(); ?>

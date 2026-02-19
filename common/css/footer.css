@@ -1,4 +1,5 @@
 footer {
+	position: relative;
 	background-color: #4E2613;
 }
 
@@ -56,4 +57,52 @@ footer {
 .footer_container .address p:not(:last-of-type),
 .footer_container .business_hours p:not(:last-of-type) {
 	margin-bottom: 0.25rem;
+}
+
+footer .page_top_btn {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 1px solid #F7F7F7;
+	position: absolute;
+	top: 1.75rem;
+	right: calc(50% - 560px);
+	z-index: 999;
+	transition: 0.3s;
+}
+
+@media (max-width: 1152px) {
+	footer .page_top_btn {
+		right: 1rem;
+	}
+}
+
+@media (max-width: 425px) {
+	footer .page_top_btn {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+footer .page_top_btn:hover {
+    opacity: 0.7;
+}
+
+footer .page_top_btn::after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid #F7F7F7;
+	border-left: 2px solid #F7F7F7;
+	position: absolute;
+	top: 36px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+@media (max-width: 425px) {
+	footer .page_top_btn::after {
+		top: 26px;
+	}
 }
