@@ -10,6 +10,14 @@ $args = [
   'order'          => 'DESC',
 ];
 
+$year     = (int) get_query_var('year');
+$month = (int) get_query_var('monthnum');
+
+if ($year && $monthnum) {
+	$args['year']     = $year;
+	$args['monthnum'] = $monthnum;
+}
+
 $query = new WP_Query($args);
 ?>
 <?php if ($query->have_posts()) : ?>

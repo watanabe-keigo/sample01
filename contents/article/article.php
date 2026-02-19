@@ -32,15 +32,51 @@
 		<?php endwhile; endif; ?>
 	</div>
 	<div class="sidebar">
+		<?php
+			$args = [
+				'post_type'      => 'information',
+				'posts_per_page' => -1,
+				'post_status'    => 'publish',
+				'orderby'        => 'date',
+				'order'          => 'DESC',
+			];
+			$query = new WP_Query($args);
+			$dates = [];
+
+			if ($query->have_posts()) {
+				while ($query->have_posts()) {
+					$query->the_post();
+					// 年月
+					$year  = get_the_date('Y');
+					$month = get_the_date('n');
+					// 表示用
+					$label = $year . '年' . $month . '月';
+					// スラッグ用（ゼロ埋め）
+					$slug = sprintf('%d/%02d', $year, $month);
+					// 重複防止キー
+					$key = $year . '-' . $month;
+
+					if (!isset($months[$key])) {
+						$dates[$key] = [
+							'label' => $label,
+							'slug'  => $slug,
+						];
+					}
+				}
+				$dates = array_unique($dates);
+				wp_reset_postdata();
+			}
+		?>
 		<div class="archives">
 			<div class="title">過去のお知らせ</div>
 			<ul class="archive_list">
-				<li>
-					<a href="#">2021年10月</a>
-				</li>
-				<li>
-					<a href="#">2021年9月</a>
-				</li>
+				<?php foreach ($dates as $date) : ?>
+					<li>
+						<a href="<?php echo esc_url(get_post_type_archive_link('information')) . $date['slug']; ?>">
+							<?php echo $date['label']; ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 		<div class="categories">
