@@ -33,6 +33,7 @@
 	</div>
 	<div class="sidebar">
 		<?php
+			// お知らせ
 			$args = [
 				'post_type'      => 'information',
 				'posts_per_page' => -1,
@@ -66,6 +67,18 @@
 				$dates = array_unique($dates);
 				wp_reset_postdata();
 			}
+
+			// メニューカテゴリ
+			$menu_categories = get_terms([
+				'taxonomy'   => 'menu_category',
+				'hide_empty' => true
+			]);
+
+			usort($menu_categories, function($a, $b) {
+				$a_order = (int) get_field('sort_order', $a);
+				$b_order = (int) get_field('sort_order', $b);
+				return $a_order <=> $b_order;
+			});
 		?>
 		<div class="archives">
 			<div class="title">過去のお知らせ</div>
@@ -82,18 +95,13 @@
 		<div class="categories">
 			<div class="title">メニュー一覧</div>
 			<ul class="category_list">
-				<li>
-					<a href="#">お食事</a>
-				</li>
-				<li>
-					<a href="#">コーヒー</a>
-				</li>
-				<li>
-					<a href="#">ドリンク</a>
-				</li>
-				<li>
-					<a href="#">スイーツ</a>
-				</li>
+				<?php foreach ($menu_categories as $menu_category) : ?>
+					<li>
+						<a href="<?php echo home_url() . "/menu_category/" . $menu_category->slug; ?>">
+							<?php echo $menu_category->name; ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 	</div>

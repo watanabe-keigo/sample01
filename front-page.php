@@ -32,38 +32,32 @@
 		<section class="menu">
 			<h2 class="top_heading">メニュー</h2>
 			<div class="menu_content content_width">
-				<div class="item">
-					<h3>コーヒー</h3>
-					<a href="#">
-						<div class="menu_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_coffee.png" alt="コーヒー">
-						</div>
-					</a>
-				</div>
-				<div class="item">
-					<h3>お食事</h3>
-					<a href="#">
-						<div class="menu_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_meal.png" alt="お食事">
-						</div>
-					</a>
-				</div>
-				<div class="item">
-					<h3>ドリンク</h3>
-					<a href="#">
-						<div class="menu_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_drink.png" alt="ドリンク">
-						</div>
-					</a>
-				</div>
-				<div class="item">
-					<h3>スイーツ</h3>
-					<a href="#">
-						<div class="menu_image">
-							<img src="<?php echo get_template_directory_uri(); ?>/common/images/menu_sweet.png" alt="スイーツ">
-						</div>
-					</a>
-				</div>
+				<?php
+					// メニューカテゴリ
+					$menu_categories = get_terms([
+						'taxonomy'   => 'menu_category',
+						'hide_empty' => true
+					]);
+
+					usort($menu_categories, function($a, $b) {
+						$a_order = (int) get_field('sort_order', $a);
+						$b_order = (int) get_field('sort_order', $b);
+						return $a_order <=> $b_order;
+					});
+
+					foreach ($menu_categories as $menu_category) :
+						$img_id = get_field("image", $menu_category);
+						$term_link = get_term_link($menu_category);
+				?>
+					<div class="item">
+						<h3><?php echo $menu_category->name; ?></h3>
+						<a href="<?php echo esc_url($term_link); ?>">
+							<div class="menu_image">
+								<?php echo wp_get_attachment_image($img_id, 'large', false, ['class' => 'category-img']); ?>
+							</div>
+						</a>
+					</div>
+				<?php endforeach; ?>
 			</div>
 			<a href="<?php echo esc_url(get_post_type_archive_link('menu')); ?>" class="btn">メニューの一覧</a>
 		</section>
