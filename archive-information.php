@@ -8,6 +8,8 @@
 <div class="container">
 	<?php include get_template_directory() . '/contents/breadcrumbs/breadcrumbs.php'; ?>
 	<?php include get_template_directory() . '/contents/information-list/information-list.php'; ?>
+	<?php include get_template_directory() . '/contents/pagination/pagination.php'; ?>
+	<?php wp_reset_postdata(); ?>
 </div>
 
 <?php get_footer(); ?>

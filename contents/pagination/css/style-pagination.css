@@ -1,0 +1,72 @@
+.container .pagination.content_width {
+	padding-top: 0;
+}
+
+.pagination {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.pagination a,
+.pagination span {
+	display: block;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	color: #807D7C;
+	border: 1px solid #807D7C;
+}
+
+@media (max-width: 425px) {
+	.pagination a,
+	.pagination span {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+.pagination .prev.page-numbers,
+.pagination .next.page-numbers {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.pagination .prev,
+.pagination .next {
+	position: relative;
+}
+
+.pagination .prev::after,
+.pagination .next::after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-top: 2px solid #807D7C;
+	border-left: 2px solid #807D7C;
+	position: absolute;
+	top: 50%;
+}
+
+.pagination .prev::after {
+	left: 20px;
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+.pagination .next::after {
+	right: 20px;
+	transform: translateY(-50%) rotate(135deg);
+}
+
+@media (max-width: 425px) {
+	.pagination .prev::after {
+		left: 16px;
+	}
+
+	.pagination .next::after {
+		right: 16px;
+	}
+}

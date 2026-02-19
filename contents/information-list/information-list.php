@@ -2,9 +2,11 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/contents/information-list/css/style-information-list.css?<?php echo time(); ?>">
 
 <?php 
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = [
   'post_type'      => 'information',
   'posts_per_page' => 3,
+  'paged'          => $paged,
   'post_status'    => 'publish',
   'orderby'        => 'date',
   'order'          => 'DESC',

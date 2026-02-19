@@ -9,9 +9,11 @@
 	<?php include get_template_directory() . '/contents/breadcrumbs/breadcrumbs.php'; ?>
 
 	<?php 
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$args = [
 			'post_type'      => 'menu',
 			'posts_per_page' => 12,
+			'paged'          => $paged,
 			'post_status'    => 'publish',
 			'orderby'        => 'date',
 			'order'          => 'DESC',
@@ -35,6 +37,8 @@
 			メニューがありません。
 		<?php endif; ?>
 	</div>
+	<?php include get_template_directory() . '/contents/pagination/pagination.php'; ?>
+	<?php wp_reset_postdata(); ?>
 </div>
 
 <?php get_footer(); ?>
